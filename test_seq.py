@@ -10,6 +10,11 @@ def fibonacci(index):
     return fibonacci(index-1) + fibonacci(index-2)
 
 
+def fib_seq(n):
+    for i in range(0, n+1):
+        yield fibonacci(n)
+
+
 def stern_brocot(count):
     return []
 
@@ -23,6 +28,10 @@ def test_returns_first_5_items():
         Fraction(2, 1),
         Fraction(1, 3),
         Fraction(3, 2)]
+
+
+def test_fibonacci_seq_correct_for_zero():
+    assert list(fib_seq(0)) == [0]
 
 
 def test_fibonacci_correct_for_zero():
