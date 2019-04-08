@@ -7,6 +7,7 @@ def fibonacci(index):
         return 0
     if index == 1:
         return 1
+    return fibonacci(index-1) + fibonacci(index-2)
 
 
 def stern_brocot(count):
@@ -30,3 +31,7 @@ def test_fibonacci_returns_zero():
 
 def test_fibonacci_returns_one():
     assert fibonacci(1) == 1
+
+
+def test_fibonacci_returns_value():
+    assert fibonacci(7) == 13
