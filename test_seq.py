@@ -25,13 +25,13 @@ def test_returns_first_5_items():
         Fraction(3, 2)]
 
 
-def test_fibonacci_returns_zero():
+def test_fibonacci_correct_for_zero():
     assert fibonacci(0) == 0
 
 
-def test_fibonacci_returns_one():
+def test_fibonacci_correct_for_one():
     assert fibonacci(1) == 1
 
 
-def test_fibonacci_returns_value():
+def test_fibonacci_correct_for_n():
     assert fibonacci(7) == 13
