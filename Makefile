@@ -2,8 +2,8 @@ all: test
 
 test:
 	pytest
-	.PHONY: test
+.PHONY: test
 
 build:
 	pip3 install -r requirements.txt
-	.PHONY: build
+.PHONY: build
