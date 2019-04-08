@@ -1,7 +1,5 @@
 from fractions import Fraction
 
-half = Fraction(1, 2)
-
 def stern_brocot(count):
     return []
 
@@ -14,5 +12,3 @@ def test_returns_first_5_items():
             Fraction(1,3),
             Fraction(3,2)
             ]
-
-print(half);
