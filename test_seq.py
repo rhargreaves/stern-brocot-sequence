@@ -5,6 +5,8 @@ import pytest
 def fibonacci(index):
     if index == 0:
         return 0
+    if index == 1:
+        return 1
 
 
 def stern_brocot(count):
@@ -24,3 +26,7 @@ def test_returns_first_5_items():
 
 def test_fibonacci_returns_zero():
     assert fibonacci(0) == 0
+
+
+def test_fibonacci_returns_one():
+    assert fibonacci(1) == 1
