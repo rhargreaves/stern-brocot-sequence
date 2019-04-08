@@ -38,6 +38,10 @@ def test_fibonacci_seq_correct_for_one():
     assert list(fib_seq(1)) == [0, 1]
 
 
+def test_fibonacci_seq_correct_for_n():
+    assert list(fib_seq(7)) == [0, 1, 1, 2, 3, 5, 8, 13]
+
+
 def test_fibonacci_correct_for_zero():
     assert fibonacci(0) == 0
 
