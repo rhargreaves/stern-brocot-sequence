@@ -12,7 +12,7 @@ def fibonacci(index):
 
 def fib_seq(n):
     for i in range(0, n+1):
-        yield fibonacci(n)
+        yield fibonacci(i)
 
 
 def stern_brocot(count):
@@ -32,6 +32,10 @@ def test_returns_first_5_items():
 
 def test_fibonacci_seq_correct_for_zero():
     assert list(fib_seq(0)) == [0]
+
+
+def test_fibonacci_seq_correct_for_one():
+    assert list(fib_seq(1)) == [0, 1]
 
 
 def test_fibonacci_correct_for_zero():
