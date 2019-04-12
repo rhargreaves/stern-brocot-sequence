@@ -1,6 +1,11 @@
 from fractions import Fraction
 from src.seq import fibonacci, weird_fib_seq, fib_seq, stern_brocot
+from itertools import islice
 import pytest
+
+
+def take(func, n):
+    return list(islice(func(n), n+1))
 
 
 @pytest.mark.skip(reason="Will fail until implementation started")
@@ -27,15 +32,15 @@ def test_fibonacci_weird_seq_appends_previous_fib_result_for_higher_n():
 
 
 def test_fibonacci_seq_correct_for_zero():
-    assert list(fib_seq(0)) == [0]
+    assert take(fib_seq, 0) == [0]
 
 
 def test_fibonacci_seq_correct_for_one():
-    assert list(fib_seq(1)) == [0, 1]
+    assert take(fib_seq, 1) == [0, 1]
 
 
 def test_fibonacci_seq_correct_for_n():
-    assert list(fib_seq(7)) == [0, 1, 1, 2, 3, 5, 8, 13]
+    assert take(fib_seq, 7) == [0, 1, 1, 2, 3, 5, 8, 13]
 
 
 def test_fibonacci_correct_for_zero():
