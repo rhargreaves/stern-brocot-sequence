@@ -25,10 +25,14 @@ def weird_fib_seq(n):
     yield a
     yield b
     while True:
-        c = a + b
-        yield c
-        a = b
-        b = c
+        if index % 2 == 0 and index > 0:
+            yield a
+        else:
+            c = a + b
+            yield c
+            a = b
+            b = c
+        index += 1
 
 
 def stern_brocot(count):
