@@ -1,7 +1,7 @@
 all: test
 
 test:
-	pytest
+	pytest -vv
 .PHONY: test
 
 build:

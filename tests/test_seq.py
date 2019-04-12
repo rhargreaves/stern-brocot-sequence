@@ -1,25 +1,15 @@
 from fractions import Fraction
+from src.seq import fibonacci, weird_fib_seq, fib_seq, stern_brocot
+from itertools import islice
 import pytest
 
 
-def fibonacci(index):
-    if index == 0 or index == 1:
-        return index
-    return fibonacci(index-1) + fibonacci(index-2)
+def take(func, n):
+    return list(islice(func(n), n+1))
 
 
-def fib_seq(n):
-    for i in range(0, n+1):
-        yield fibonacci(i)
-
-
-def stern_brocot(count):
-    return []
-
-
-@pytest.mark.skip(reason="Will fail until implementation started")
 def test_returns_first_5_items():
-    seq = stern_brocot(5)
+    seq = take(stern_brocot, 4)
     assert seq == [
         Fraction(1, 1),
         Fraction(1, 2),
@@ -28,12 +18,25 @@ def test_returns_first_5_items():
         Fraction(3, 2)]
 
 
+def test_fibonacci_weird_seq_appends_previous_fib_result():
+    assert take(weird_fib_seq, 4) == [0, 1, 1, 2, 1]
+
+
+def test_fibonacci_weird_seq_appends_previous_fib_result_for_higher_n():
+    assert take(weird_fib_seq, 9) == [0, 1, 1, 2, 1, 3, 2, 3, 1, 4]
+
+
+def test_fibonacci_weird_seq_appends_previous_fib_result_for_much_higher_n():
+    assert take(weird_fib_seq, 15) == [
+        0, 1, 1, 2, 1, 3, 2, 3, 1, 4, 3, 5, 2, 5, 3, 4]
+
+
 def test_fibonacci_seq_correct_for_zero():
-    assert list(fib_seq(0)) == [0]
+    assert take(fib_seq, 0) == [0]
 
 
 def test_fibonacci_seq_correct_for_one():
-    assert list(fib_seq(1)) == [0, 1]
+    assert take(fib_seq, 1) == [0, 1]
 
 
 def test_fibonacci_seq_correct_for_n():

@@ -1,3 +1,5 @@
+from itertools import islice
+from fractions import Fraction
 
 
 def fibonacci(index):
@@ -33,4 +35,9 @@ def weird_fib_seq(n):
 
 
 def stern_brocot(count):
-    return []
+    y = 1
+    for i, x in enumerate(weird_fib_seq(count)):
+        if i == 0 or i == 1:
+            continue
+        yield Fraction(y, x)
+        y = x
