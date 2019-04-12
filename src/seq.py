@@ -31,7 +31,6 @@ def weird_fib_seq(n):
         if count > 1:
             seq.append(seq[head])
             yield seq[-1]
-            count += 1
         head += 1
 
 
