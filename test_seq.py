@@ -14,8 +14,12 @@ def test_returns_first_5_items():
         Fraction(3, 2)]
 
 
-def test_fibonacci_weird_seq_skips_zero_for_n():
+def test_fibonacci_weird_seq_skips_zero():
     assert list(weird_fib_seq(2)) == [1, 1, 2]
+
+
+def test_fibonacci_weird_seq_appends_previous_fib_result():
+    assert list(weird_fib_seq(3)) == [1, 1, 2, 1]
 
 
 def test_fibonacci_seq_correct_for_zero():

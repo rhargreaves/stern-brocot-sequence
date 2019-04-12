@@ -12,8 +12,19 @@ def fib_seq(n):
 
 
 def weird_fib_seq(n):
+    yieldCount = 0
+    j = 0
     for i in range(1, n+2):
+        yieldCount += 1
         yield fibonacci(i)
+        if yieldCount > n:
+            break
+        if i > 2:
+            j += 1
+            yieldCount += 1
+            yield fibonacci(j)
+            if yieldCount > n:
+                break
 
 
 def stern_brocot(count):
