@@ -7,8 +7,18 @@ def fibonacci(index):
 
 
 def fib_seq(n):
+    a = 0
+    b = 1
     for i in range(0, n+1):
-        yield fibonacci(i)
+        if i == 0:
+            yield a
+        elif i == 1:
+            yield b
+        else:
+            c = a + b
+            yield c
+            a = b
+            b = c
 
 
 def weird_fib_seq(n):
