@@ -27,6 +27,11 @@ def test_fibonacci_weird_seq_appends_previous_fib_result_for_higher_n():
     assert take(weird_fib_seq, 9) == [0, 1, 1, 2, 1, 3, 2, 3, 1, 4]
 
 
+def test_fibonacci_weird_seq_appends_previous_fib_result_for_much_higher_n():
+    assert take(weird_fib_seq, 15) == [
+        0, 1, 1, 2, 1, 3, 2, 3, 1, 4, 3, 5, 2, 5, 3, 4]
+
+
 def test_fibonacci_seq_correct_for_zero():
     assert take(fib_seq, 0) == [0]
 
