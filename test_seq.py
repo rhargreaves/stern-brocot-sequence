@@ -22,6 +22,10 @@ def test_fibonacci_weird_seq_appends_previous_fib_result():
     assert list(weird_fib_seq(3)) == [1, 1, 2, 1]
 
 
+def test_fibonacci_weird_seq_appends_previous_fib_result_for_higher_n():
+    assert list(weird_fib_seq(8)) == [1, 1, 2, 1, 3, 2, 3, 1, 4]
+
+
 def test_fibonacci_seq_correct_for_zero():
     assert list(fib_seq(0)) == [0]
 

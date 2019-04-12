@@ -22,7 +22,7 @@ def weird_fib_seq(n):
         if i > 2:
             j += 1
             yieldCount += 1
-            yield fibonacci(j)
+            yield list(weird_fib_seq(j))[-1]
             if yieldCount > n:
                 break
 
