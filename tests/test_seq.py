@@ -4,7 +4,7 @@ from itertools import islice
 import pytest
 
 
-def test_returns_first_5_items():
+def test_returns_first_5_numbers_of_stern_brocot():
     assert take(stern_brocot, 5) == [
         Fraction(1, 1),
         Fraction(1, 2),
