@@ -20,17 +20,15 @@ def fib_seq():
 
 
 def weird_fib_seq():
-    seq = [0, 1]
-    yield seq[0]
-    yield seq[1]
-    head = 1
+    seq = [0, 1, 1]
+    for x in seq:
+        yield x
     while True:
-        seq.append(seq[head-1] + seq[head])
+        seq.append(seq[1] + seq[2])
         yield seq[-1]
-        if head > 1:
-            seq.append(seq[head])
-            yield seq[-1]
-        head += 1
+        seq.append(seq[2])
+        yield seq[-1]
+        seq.pop(0)
 
 
 def stern_brocot():
