@@ -1,4 +1,10 @@
-from seq import stern_brocot
+from src.seq import stern_brocot
 
-for x in stern_brocot(10):
-    print(x)
+
+@profile
+def print_sequence():
+    for x in stern_brocot(10):
+        print(x)
+
+
+print_sequence()
