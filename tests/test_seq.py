@@ -1,11 +1,22 @@
 from fractions import Fraction
 from src.seq import fibonacci, weird_fib_seq, fib_seq, stern_brocot
+from src.graph import stern_brocot_graph
 from itertools import islice
 import pytest
 
 
 def test_returns_first_5_numbers_of_stern_brocot():
     assert take(stern_brocot, 5) == [
+        Fraction(1, 1),
+        Fraction(1, 2),
+        Fraction(2, 1),
+        Fraction(1, 3),
+        Fraction(3, 2)]
+
+
+@pytest.mark.skip(reason="WIP")
+def test_returns_first_5_numbers_of_stern_brocot_via_graph():
+    assert take(stern_brocot_graph, 5) == [
         Fraction(1, 1),
         Fraction(1, 2),
         Fraction(2, 1),
