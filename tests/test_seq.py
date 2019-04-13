@@ -4,13 +4,8 @@ from itertools import islice
 import pytest
 
 
-def take(func, n):
-    return list(islice(func(), n))
-
-
 def test_returns_first_5_items():
-    seq = take(stern_brocot, 5)
-    assert seq == [
+    assert take(stern_brocot, 5) == [
         Fraction(1, 1),
         Fraction(1, 2),
         Fraction(2, 1),
@@ -53,3 +48,7 @@ def test_fibonacci_correct_for_one():
 
 def test_fibonacci_correct_for_n():
     assert fibonacci(7) == 13
+
+
+def take(func, n):
+    return list(islice(func(), n))
