@@ -1,5 +1,5 @@
 from fractions import Fraction
-from src.seq import fibonacci, weird_fib_seq, fib_seq, stern_brocot
+from src.seq import fibonacci, stern_diatomic_seq, fib_seq, stern_brocot
 from src.graph import stern_brocot_graph
 from itertools import islice
 import pytest
@@ -24,16 +24,16 @@ def test_returns_first_5_numbers_of_stern_brocot_via_graph():
         Fraction(3, 2)]
 
 
-def test_fibonacci_weird_seq_appends_previous_fib_result():
-    assert take(weird_fib_seq, 5) == [0, 1, 1, 2, 1]
+def test_stern_diatomic_seq_appends_previous_fib_result():
+    assert take(stern_diatomic_seq, 5) == [0, 1, 1, 2, 1]
 
 
-def test_fibonacci_weird_seq_appends_previous_fib_result_for_higher_n():
-    assert take(weird_fib_seq, 10) == [0, 1, 1, 2, 1, 3, 2, 3, 1, 4]
+def test_stern_diatomic_seq_appends_previous_fib_result_for_higher_n():
+    assert take(stern_diatomic_seq, 10) == [0, 1, 1, 2, 1, 3, 2, 3, 1, 4]
 
 
-def test_fibonacci_weird_seq_appends_previous_fib_result_for_much_higher_n():
-    assert take(weird_fib_seq, 16) == [
+def test_stern_diatomic_seq_appends_previous_fib_result_for_much_higher_n():
+    assert take(stern_diatomic_seq, 16) == [
         0, 1, 1, 2, 1, 3, 2, 3, 1, 4, 3, 5, 2, 5, 3, 4]
 
 

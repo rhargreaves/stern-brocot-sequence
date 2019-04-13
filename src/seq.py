@@ -19,7 +19,7 @@ def fib_seq():
         b = c
 
 
-def weird_fib_seq():
+def stern_diatomic_seq():
     yield 0
     seq = [1, 1]
     for x in seq:
@@ -34,7 +34,7 @@ def weird_fib_seq():
 
 def stern_brocot():
     y = 1
-    for i, x in enumerate(weird_fib_seq()):
+    for i, x in enumerate(stern_diatomic_seq()):
         if i == 0 or i == 1:
             continue
         yield Fraction(y, x)
