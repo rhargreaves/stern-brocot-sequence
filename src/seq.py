@@ -8,19 +8,19 @@ def fibonacci(index):
     return fibonacci(index-1) + fibonacci(index-2)
 
 
-def fib_seq(n):
+def fib_seq():
     a = 0
     b = 1
     yield a
     yield b
-    for i in range(2, n+1):
+    while True:
         c = a + b
         yield c
         a = b
         b = c
 
 
-def weird_fib_seq(n):
+def weird_fib_seq():
     seq = [0, 1]
     yield seq[0]
     yield seq[1]
@@ -34,9 +34,9 @@ def weird_fib_seq(n):
         head += 1
 
 
-def stern_brocot(count):
+def stern_brocot():
     y = 1
-    for i, x in enumerate(weird_fib_seq(count)):
+    for i, x in enumerate(weird_fib_seq()):
         if i == 0 or i == 1:
             continue
         yield Fraction(y, x)

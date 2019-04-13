@@ -5,7 +5,7 @@ import pytest
 
 
 def take(func, n):
-    return list(islice(func(n), n+1))
+    return list(islice(func(), n+1))
 
 
 def test_returns_first_5_items():
@@ -40,7 +40,7 @@ def test_fibonacci_seq_correct_for_one():
 
 
 def test_fibonacci_seq_correct_for_n():
-    assert list(fib_seq(7)) == [0, 1, 1, 2, 3, 5, 8, 13]
+    assert take(fib_seq, 7) == [0, 1, 1, 2, 3, 5, 8, 13]
 
 
 def test_fibonacci_correct_for_zero():
