@@ -2,7 +2,10 @@
 A rational project to spend a few evenings on
 
 ## Purpose
-Generates numbers of the [Stern-Brocot sequence](https://en.wikipedia.org/wiki/Stern%E2%80%93Brocot_tree).
+Generates numbers of the [Stern-Brocot sequence](https://en.wikipedia.org/wiki/Stern%E2%80%93Brocot_tree) in various ways. Specifically via:
+
+* A modified Fibonacci sequence function
+* A binary tree
 
 ## Build & Test
 ```
