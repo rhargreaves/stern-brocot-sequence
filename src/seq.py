@@ -20,13 +20,14 @@ def fib_seq():
 
 
 def weird_fib_seq():
-    seq = [0, 1, 1]
+    yield 0
+    seq = [1, 1]
     for x in seq:
         yield x
     while True:
-        seq.append(seq[1] + seq[2])
+        seq.append(seq[0] + seq[1])
         yield seq[-1]
-        seq.append(seq[2])
+        seq.append(seq[1])
         yield seq[-1]
         seq.pop(0)
 
